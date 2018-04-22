@@ -38,31 +38,26 @@ main{
 
 header::before,
 main::before{
-  /* full width bg within limited width container */
   content: "";
   position: absolute;
   width: 100vw;
   height: 100%;
   top: 0;
   left: calc(-50vw + 50%);
+  z-index: -1;
 }
 
 header{
+  height: 180px;
   display: flex;
-  justify-content: center;
   align-items: flex-end;
   transform: translateZ(-1px) scale(2);
   transform-origin: top;
-  z-index: -1;
 }
 
 header::before{
-  background: linear-gradient(135deg, #a59595, #211731);
-  z-index: -1;
-}
-
-header .logo{
-  width: 200px;
+  background: url(bg2.jpg), linear-gradient(135deg, #ccb7b7, #33145d);
+  background-blend-mode: overlay;
 }
 
 header nav{
@@ -70,10 +65,18 @@ header nav{
   text-align: right;
 }
 
+main{
+  position: relative;
+  z-index: 1;
+}
+
 main::before{
   background: white;
   box-shadow: 0 -8px 8px -8px black;
-  z-index: -1;
+}
+
+main img{
+  width: 100%;
 }
 
 h1{
@@ -84,6 +87,7 @@ h1{
 p{
   text-align: justify;
   color: gray;
+  margin: 12px 0;
 }
 
 a{
